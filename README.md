@@ -6,12 +6,14 @@ C# API Wrapper for the [DarkSky API](https://developer.darkskyapp.com/). Current
 Usage is very simple:
 
 ```csharp
+using DarkSky;
+
+...
+
 var darksky = new DarkSky.Api(YOUR_API_KEY);
-
 var orlando  = new Position { Latitude=28.5381f, Longitude=81.3794f };
+Task<FullForecast> response = darksky.Forecast(orlando);
 
-Task<Forecast> response = darksky.Forecast(orlando);
-
-response.ContinueWith(forecast => DisplayText(forecast.HourSummary));
+response.ContinueWith(forecast => DisplayText(forecast.Result.HourSummary));
 // displays something like "Rain starting in 3 Min, Stopping 30 Min Later"
 ```
