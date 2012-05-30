@@ -9,7 +9,7 @@ Usage is very simple:
 using DarkSky;
 ...
 var darksky = new DarkSky.Api(YOUR_API_KEY);
-var orlando  = new Position { Latitude=28.5381f, Longitude=-81.3794f };
+var orlando  = new Position { Latitude=28.5381d, Longitude=-81.3794d };
 Task<FullForecast> response = darksky.Forecast(orlando);
 
 response.ContinueWith(forecast => DisplayText(forecast.Result.HourSummary));
