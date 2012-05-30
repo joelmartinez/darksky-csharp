@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkSky.MonoDroid", "DarkSky.MonoDroid\DarkSky.MonoDroid.csproj", "{DE1C0DE3-FB39-4967-8950-D26094DC54E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkSky.MonoTouch", "DarkSky.MonoTouch\DarkSky.MonoTouch.csproj", "{FD66B7CA-278A-4D27-A64B-9EAF56098FD3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DE1C0DE3-FB39-4967-8950-D26094DC54E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE1C0DE3-FB39-4967-8950-D26094DC54E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE1C0DE3-FB39-4967-8950-D26094DC54E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE1C0DE3-FB39-4967-8950-D26094DC54E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD66B7CA-278A-4D27-A64B-9EAF56098FD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD66B7CA-278A-4D27-A64B-9EAF56098FD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD66B7CA-278A-4D27-A64B-9EAF56098FD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD66B7CA-278A-4D27-A64B-9EAF56098FD3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = DarkSky.MonoDroid\DarkSky.MonoDroid.csproj
+	EndGlobalSection
+EndGlobal
