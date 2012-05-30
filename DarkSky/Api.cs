@@ -42,7 +42,18 @@ namespace DarkSky
 			
 			url = string.Format(url, apikey, locations);
 			
-			return WebHelper.Json<HourPrecipitation[]>(url);
+			return WebHelper.Json<PrecipitationRoot>(url)
+				.ContinueWith<HourPrecipitation[]>(response => response.Result.Precipitation);
+		}
+		
+		public Task<InterestingStorm[]> InterestingStorms()
+		{
+			//https://api.darkskyapp.com/v1/interesting/APIKEY
+			string url = "https://api.darkskyapp.com/v1/interesting/{0}";
+			url = string.Format(url, apikey);
+			
+			return WebHelper.Json<InterestingStormRoot>(url)
+				.ContinueWith<InterestingStorm[]>(r => r.Result.Storms);
 		}
 	}
 }
