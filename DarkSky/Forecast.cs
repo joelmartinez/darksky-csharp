@@ -91,4 +91,36 @@ namespace DarkSky
 		[DataMember(Name="precipitation")]
 		public HourPrecipitation[] Precipitation {get;set;}
 	}
+	
+	[DataContract]
+	public class InterestingStormRoot
+	{
+		[DataMember(Name="storms")]
+		public InterestingStorm[] Storms {get;set;}
+	}
+	
+	[DataContract]
+	public class InterestingStorm
+	{
+		[DataMember(Name="radarStation")]
+		public string RadarStation {get;set;}
+		
+		[DataMember(Name="intensity")]
+		public string Intensity {get;set;}
+		
+		[DataMember(Name="city")]
+		public string City {get;set;}
+		
+		[DataMember(Name="latitude")]
+		public double Latitude {get;set;}
+		
+		[DataMember(Name="longitude")]
+		public double Longitude {get;set;}
+		
+		public Position Position
+		{
+			get { return new Position { Latitude = this.Latitude, Longitude = this.Longitude }; }
+		}
+	}
+	
 }

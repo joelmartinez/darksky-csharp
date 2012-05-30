@@ -4,8 +4,8 @@ namespace DarkSky
 {	
 	public struct Position : IEquatable<Position>
 	{
-		public float Latitude;
-		public float Longitude;
+		public double Latitude;
+		public double Longitude;
 		
 		public override bool Equals (object obj)
 		{

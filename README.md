@@ -8,7 +8,7 @@ Usage is very simple:
 ```csharp
 var darksky = new DarkSky.Api(YOUR_API_KEY);
 
-var orlando  = new Position { Latitude=28.5381f, Longitude=81.3794f };
+var orlando  = new Position { Latitude=28.5381d, Longitude=81.3794d };
 
 Task<Forecast> response = darksky.Forecast(orlando);
 

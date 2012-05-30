@@ -4,8 +4,8 @@ namespace DarkSky
 {
 	public struct TimePosition : IEquatable<TimePosition>
 	{
-		public float Latitude;
-		public float Longitude;
+		public double Latitude;
+		public double Longitude;
 		public DateTime Time;
 		
 		
