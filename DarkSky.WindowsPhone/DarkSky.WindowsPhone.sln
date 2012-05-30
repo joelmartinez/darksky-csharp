@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkSky.WindowsPhone", "DarkSky.WindowsPhone.csproj", "{A913EEA5-EA82-4C26-9476-554ECE2202EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A913EEA5-EA82-4C26-9476-554ECE2202EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A913EEA5-EA82-4C26-9476-554ECE2202EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A913EEA5-EA82-4C26-9476-554ECE2202EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A913EEA5-EA82-4C26-9476-554ECE2202EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
