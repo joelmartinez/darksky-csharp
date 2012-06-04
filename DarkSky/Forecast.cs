@@ -62,6 +62,9 @@ namespace DarkSky
 		[DataMember(Name="hourSummary")]
 	    public string HourSummary { get; set; }
 		
+		[DataMember(Name="daySummary")]
+		public string DaySummary { get; set; }
+		
 		[DataMember(Name="currentTemp")]
 	    public int CurrentTemperature { get; set; }
 		
