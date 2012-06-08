@@ -10,7 +10,7 @@ using DarkSky;
 ...
 var darksky = new DarkSky.Api(YOUR_API_KEY);
 var orlando  = new Position { Latitude=28.5381d, Longitude=-81.3794d };
-Task<FullForecast> response = darksky.Forecast(orlando);
+Task<FullForecast> response = darksky.GetForecastAsync(orlando);
 
 response.ContinueWith(forecast => DisplayText(forecast.Result.HourSummary));
 // displays something like "Rain starting in 3 Min, Stopping 30 Min Later"
