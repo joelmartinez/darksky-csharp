@@ -14,7 +14,7 @@ namespace DarkSky
 			this.apikey = key;
 		}
 		
-		public Task<FullForecast> Forecast(Position position)
+		public Task<FullForecast> GetForecastAsync(Position position)
 		{
 			//https://api.darkskyapp.com/v1/forecast/APIKEY/LAT,LON
 			string url = "https://api.darkskyapp.com/v1/forecast/{0}/{1},{2}";
@@ -23,7 +23,7 @@ namespace DarkSky
 			return WebHelper.Json<FullForecast>(url);
 		}
 		
-		public Task<Forecast> BriefForecast(Position position)
+		public Task<Forecast> GetBriefForecastAsync(Position position)
 		{
 			//https://api.darkskyapp.com/v1/brief_forecast/APIKEY/LAT,LON
 			string url = "https://api.darkskyapp.com/v1/forecast/{0}/{1},{2}";
@@ -32,7 +32,7 @@ namespace DarkSky
 			return WebHelper.Json<Forecast>(url);
 		}
 		
-		public Task<HourPrecipitation[]> Precipitation(params TimePosition[] values)
+		public Task<HourPrecipitation[]> GetPrecipitationAsync(params TimePosition[] values)
 		{
 			//https://api.darkskyapp.com/v1/precipitation/APIKEY/LAT1,LON1,TIME1;LAT2,LON2,TIME2;...
 			string url = "https://api.darkskyapp.com/v1/precipitation/{0}/{1}";
@@ -46,7 +46,7 @@ namespace DarkSky
 				.ContinueWith<HourPrecipitation[]>(response => response.Result.Precipitation);
 		}
 		
-		public Task<InterestingStorm[]> InterestingStorms()
+		public Task<InterestingStorm[]> GetInterestingStormsAsync()
 		{
 			//https://api.darkskyapp.com/v1/interesting/APIKEY
 			string url = "https://api.darkskyapp.com/v1/interesting/{0}";
