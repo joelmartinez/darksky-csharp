@@ -7,6 +7,20 @@ namespace DarkSky
 		public double Latitude;
 		public double Longitude;
 		
+		public float VectorDistanceFromSquared(ref Position other)
+		{
+			double lat = this.Latitude - other.Latitude;
+			double lon = this.Longitude - other.Longitude;
+			return (lat * lat) * (lon * lon);
+		}
+		
+		public float VectorDistanceFrom(ref Position other)
+		{
+			return Math.Sqrt(this.VectorDistanceFromSquared(ref other));
+		}
+		
+		#region Object overrides
+		
 		public override bool Equals (object obj)
 		{
 			if (obj == null || typeof(Position) != obj.GetType()) return false;
@@ -28,6 +42,8 @@ namespace DarkSky
 		{
 			return string.Format ("{0},{1}", this.Latitude, this.Longitude);
 		}
+		
+		#endregion
 	}
 }
 
