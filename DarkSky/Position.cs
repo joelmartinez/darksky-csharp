@@ -7,16 +7,30 @@ namespace DarkSky
 		public double Latitude;
 		public double Longitude;
 		
-		public float VectorDistanceFromSquared(ref Position other)
+		public double VectorDistanceFromSquared(ref Position other)
 		{
 			double lat = this.Latitude - other.Latitude;
 			double lon = this.Longitude - other.Longitude;
 			return (lat * lat) * (lon * lon);
 		}
 		
-		public float VectorDistanceFrom(ref Position other)
+		public double VectorDistanceFrom(ref Position other)
 		{
 			return Math.Sqrt(this.VectorDistanceFromSquared(ref other));
+		}
+		
+		public static double Lerp(double value1, double value2, double amount)
+		{
+			return value1 + (value2 - value1) * amount;
+		}
+		
+		public Position Interpolate(Position other, double amount)
+		{
+			return new Position
+			{
+				Latitude = Lerp(this.Latitude, other.Latitude, amount),
+				Longitude = Lerp(this.Longitude, other.Longitude, amount)
+			};
 		}
 		
 		#region Object overrides
