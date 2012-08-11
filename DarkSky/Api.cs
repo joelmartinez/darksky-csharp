@@ -54,7 +54,20 @@ namespace DarkSky
 			
 			return WebHelper.Json<InterestingStormRoot>(url)
 				.ContinueWith<InterestingStorm[]>(r => r.Result.Storms);
-		}
-	}
+        }
+
+        #region Weather Notifications
+
+        public Task<Notification> GetNotification(string id)
+        {
+            //https://api.darkskyapp.com/v1/notification/APIKEY/ID
+            string url = "https://api.darkskyapp.com/v1/notification/{0}/{1}";
+            url = string.Format(url, apikey, Uri.EscapeDataString(id));
+
+            return WebHelper.Json<Notification>(url);
+        }
+
+        #endregion
+    }
 }
 
