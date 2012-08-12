@@ -1,18 +1,37 @@
 using System;
 using System.IO;
-using System.Threading.Tasks;
 using System.Net;
 using System.Runtime.Serialization.Json;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace DarkSky
 {
 	internal static class WebHelper
 	{
-		public static Task<T> Json<T>(string url)
+        /// <summary>Does an HTTP get on the supplied URL</summary>
+        public static Task<T> Json<T>(string url)
+        {
+            return Json<T>(url, string.Empty);
+        }
+
+        /// <summary>Does an HTTP get if no post data is supplied, otherwise, a post</summary>
+		public static Task<T> Json<T>(string url, string postData)
         {
             var tcs = new TaskCompletionSource<T>();
             var request = (HttpWebRequest)WebRequest.Create(url);
+
+            if (!string.IsNullOrWhiteSpace(postData))
+            {
+                request.AllowWriteStreamBuffering = true;
+                request.Method = "POST";
+                request.ContentLength = postData.Length;
+                request.ContentType = "application/x-www-form-urlencoded";
+
+                StreamWriter writer = new StreamWriter(request.GetRequestStream());
+                writer.Write(postData);
+            }
+
             try
             {
                 request.BeginGetResponse(iar =>

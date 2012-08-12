@@ -67,6 +67,19 @@ namespace DarkSky
             return WebHelper.Json<Notification>(url);
         }
 
+        public Task<Notification> CreateNotification(Position pos, string callback, int? threshold = null)
+        {
+            string post = "lat={0}&lon={1}&callback={2}";
+            post = string.Format(post, pos.Latitude, pos.Longitude, Uri.EscapeUriString(callback));
+            if (threshold.HasValue) post += "&threshold=" + threshold.Value.ToString();
+
+            //POST https://api.darkskyapp.com/v1/create_notification/APIKEY
+            string url = "https://api.darkskyapp.com/v1/create_notification/{0}";
+            url = string.Format(url, apikey);
+
+            return WebHelper.Json<Notification>(url, post);
+        }
+
         #endregion
     }
 }

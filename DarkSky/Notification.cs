@@ -16,6 +16,11 @@ namespace DarkSky
         [DataMember(Name = "longitude")]
         public double Longitude { get; set; }
 
+        public Position Position
+        {
+            get { return new Position { Latitude = this.Latitude, Longitude = this.Longitude }; }
+        }
+
         [DataMember(Name = "threshold")]
         public string Threshold { get; set; }
 
