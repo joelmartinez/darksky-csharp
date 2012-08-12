@@ -74,6 +74,9 @@
       <Link>WebHelper.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\DarkSky\Notification.cs">
+      <Link>Notification.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

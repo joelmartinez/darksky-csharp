@@ -63,5 +63,8 @@
     <Compile Include="..\DarkSky\WebHelper.cs">
       <Link>WebHelper.cs</Link>
     </Compile>
+    <Compile Include="..\DarkSky\Notification.cs">
+      <Link>Notification.cs</Link>
+    </Compile>
   </ItemGroup>
 </Project>
