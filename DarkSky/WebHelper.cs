@@ -10,13 +10,13 @@ namespace DarkSky
 	internal static class WebHelper
 	{
         /// <summary>Does an HTTP get on the supplied URL</summary>
-        public static Task<T> Json<T>(string url)
+        public static async Task<T> Json<T>(string url)
         {
-            return Json<T>(url, string.Empty);
+            return await Json<T>(url, string.Empty);
         }
 
         /// <summary>Does an HTTP get if no post data is supplied, otherwise, a post</summary>
-		public static Task<T> Json<T>(string url, string postData)
+		public static async Task<T> Json<T>(string url, string postData)
         {
             var tcs = new TaskCompletionSource<T>();
             var request = (HttpWebRequest)WebRequest.Create(url);
@@ -64,7 +64,7 @@ namespace DarkSky
                 }, null);
             }
             catch (Exception exc) { tcs.SetException(exc); }
-            return tcs.Task;
+            return await tcs.Task;
 
 		}
 	}
