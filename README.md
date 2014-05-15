@@ -1,6 +1,8 @@
 darksky-chsharp
 ===============
 
+**note: this library has been superceded by the [Forecast.io](https://github.com/f0xy/forecast.io-csharp) API. You should use that one as it is more up to date.**
+
 C# API Wrapper for the [DarkSky API](https://developer.darkskyapp.com/). Currently supported platforms are: Windows Phone, iOS, and Android via MonoTouch/Mono for Android.
 
 Usage is very simple:
