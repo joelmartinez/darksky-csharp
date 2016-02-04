@@ -1,4 +1,4 @@
-darksky-chsharp
+darksky-csharp
 ===============
 
 **note: this library has been superceded by the [Forecast.io](https://github.com/f0xy/forecast.io-csharp) API. You should use that one as it is more up to date.**
